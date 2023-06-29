@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using projeto_final.Forms.ClienteForm;
 using projeto_final.Forms.VendaForm;
+using projeto_final.Forms.RelatorioForm;
 
 namespace projeto_final
 {
@@ -66,6 +67,12 @@ namespace projeto_final
         private void btnVendas_Click(object sender, EventArgs e)
         {
             VendaAddForm form = new VendaAddForm();
+            form.ShowDialog();
+        }
+
+        private void btnRelatorios_Click(object sender, EventArgs e)
+        {
+            RelatorioForm form = new RelatorioForm();
             form.ShowDialog();
         }
     }

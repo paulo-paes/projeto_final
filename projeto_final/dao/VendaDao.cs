@@ -11,10 +11,10 @@ namespace projeto_final.dao
     {
         private const string tabela = "vendas";
         private ItemVendaDao ItemVendaDao = new ItemVendaDao();
+        private ProdutoDao ProdutoDao = new ProdutoDao();
         public void Cadastrar(Venda venda)
         {
             string query = "INSERT INTO " + tabela + " (" +
-                "dt_venda," +
                 "cod_cliente," +
                 /*"cod_usuario," +*/
                 "total_itens," +
@@ -26,7 +26,6 @@ namespace projeto_final.dao
                 "observacoes" +
                 ")" +
                 "VALUES (" +
-                "@dt_venda," +
                 "@cod_cliente," +
                 /*"@cod_usuario," +*/
                 "@total_itens," +
@@ -49,8 +48,9 @@ namespace projeto_final.dao
                     venda.Cod = Convert.ToInt32(reader["id"]);
                 }
                 ItemVendaDao.CadastrarLista(venda);
+                ProdutoDao.AtualizarEstoque(venda);
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
                 throw new Exception("Não foi possível inserir o registro no banco");
@@ -162,24 +162,25 @@ namespace projeto_final.dao
             Venda vendaBanco = ObterPorCod(venda.Cod);
             if (vendaBanco == null)
             {
-                throw new Exception("Cliente não encontrado");
+                throw new Exception("Venda não encontrada");
             }
             string query = "UPDATE " + tabela + " SET " +
-                "nome = @nome, " +
-                "situacao = @situacao, " +
-                "usuario = @usuario" +
-                "senha = @senha" +
+                "observacoes = @observacoes, " +
+                "situacao = @situacao " +
                 "WHERE cod = @cod";
 
-            MySqlCommand comando = CriarComandoComParametros(query, venda);
+            MySqlConnection conexao = ConnectionFactory.Connect();
+            MySqlCommand comando = new MySqlCommand(query, conexao);
             comando.Parameters.AddWithValue("@cod", venda.Cod);
+            comando.Parameters.AddWithValue("@observacoes", venda.Observacoes);
+            comando.Parameters.AddWithValue("@situacao", venda.Situacao);
             try
             {
                 comando.ExecuteNonQuery();
             }
-            catch
+            catch (Exception ex)
             {
-                throw new Exception("Não foi possível atualizar o registro no banco");
+                throw new Exception("Não foi possível atualizar o registro no banco " + ex.Message);
             }
             finally
             {
@@ -227,6 +228,111 @@ namespace projeto_final.dao
             comando.Parameters.AddWithValue("@observacoes", venda.Observacoes);
 
             return comando;
+        }
+
+
+        public List<RelatorioVenda> Listar(DateTime dataInicial, DateTime dataFinal)
+        {
+            dataInicial = dataInicial.Date;
+            dataFinal = dataFinal.Date.AddHours(23).AddMinutes(59).AddSeconds(59);
+            string query = "SELECT v.cod, v.dt_venda, c.nome, " +
+                "v.total_itens, v.sub_total, v.desconto, v.valor_total, v.situacao " +
+                "FROM vendas v " +
+                "INNER JOIN clientes c " +
+                "ON v.cod_cliente = c.cod " +
+                "WHERE v.dt_venda > @dataInicial AND v.dt_venda <= @dataFinal";
+
+
+            MySqlConnection conexao = ConnectionFactory.Connect();
+            List<RelatorioVenda> vendas = new List<RelatorioVenda>();
+
+            try
+            {
+                MySqlCommand comando = new MySqlCommand(query, conexao);
+                comando.Parameters.AddWithValue("@dataInicial", dataInicial);
+                comando.Parameters.AddWithValue("@dataFinal", dataFinal);
+                using (MySqlDataReader reader = comando.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+
+                        vendas.Add(new RelatorioVenda
+                        {
+                            Codigo = reader.GetInt32("cod"),
+                            DataVenda = reader.IsDBNull(1) ? DateTime.Now : reader.GetDateTime("dt_venda"),
+                            NomeCliente = reader.GetString("nome"),
+                            TotalItens = reader.IsDBNull(3) ? 0 : reader.GetInt32("total_itens"),
+                            SubTotal = reader.IsDBNull(4) ? 0 : reader.GetDouble("sub_total"),
+                            Desconto = reader.IsDBNull(5) ? 0 : reader.GetDouble("desconto"),
+                            ValorTotal = reader.IsDBNull(6) ? -1 : reader.GetDouble("valor_total"),
+                            Situacao = reader.IsDBNull(7) ? String.Empty : reader.GetString("situacao"),
+
+                        });
+                    }
+                    reader.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Não foi possível buscar as vendas no banco " + ex.Message);
+            }
+            finally
+            {
+                ConnectionFactory.CloseConnection(conexao);
+            }
+
+            return vendas;
+        }
+
+        public List<RelatorioProdutosMaisVendidos> ListarProdutos(DateTime dataInicial, DateTime dataFinal)
+        {
+            dataInicial = dataInicial.Date;
+            dataFinal = dataFinal.Date.AddHours(23).AddMinutes(59).AddSeconds(59);
+            string query = "SELECT p.cod, p.descricao, SUM(iv.quantidade) as quantidade " +
+                "FROM vendas v " +
+                "INNER JOIN itens_venda iv " +
+                "ON iv.cod_venda = v.cod " +
+                "INNER JOIN produtos p " +
+                "ON p.cod = iv.cod_produto " +
+                "WHERE v.dt_venda > @dataInicial AND v.dt_venda <= @dataFinal " +
+                "GROUP BY p.cod " +
+                "ORDER BY 3 DESC " +
+                "LIMIT 10";
+
+
+            MySqlConnection conexao = ConnectionFactory.Connect();
+            List<RelatorioProdutosMaisVendidos> produtos = new List<RelatorioProdutosMaisVendidos>();
+
+            try
+            {
+                MySqlCommand comando = new MySqlCommand(query, conexao);
+                comando.Parameters.AddWithValue("@dataInicial", dataInicial);
+                comando.Parameters.AddWithValue("@dataFinal", dataFinal);
+                using (MySqlDataReader reader = comando.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+
+                        produtos.Add(new RelatorioProdutosMaisVendidos
+                        {
+                            Codigo = reader.GetInt32("cod"),
+                            Descricao = reader.IsDBNull(1) ? string.Empty : reader.GetString("descricao"),
+                            Quantidade = reader.IsDBNull(2) ? 0 : reader.GetDouble("quantidade")
+                        });
+                    }
+                    reader.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Não foi possível buscar os produtos no banco " + ex.Message);
+            }
+            finally
+            {
+                ConnectionFactory.CloseConnection(conexao);
+            }
+
+            return produtos;
         }
     }
 

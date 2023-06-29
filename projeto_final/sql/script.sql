@@ -55,7 +55,7 @@ CREATE TABLE IF NOT EXISTS clientes (
 
 CREATE TABLE IF NOT EXISTS vendas(
     cod INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    dt_venda DATETIME,
+    dt_venda DATETIME DEFAULT NOW(),
     cod_cliente INT,
     cod_usuario INT,
     total_itens INT,

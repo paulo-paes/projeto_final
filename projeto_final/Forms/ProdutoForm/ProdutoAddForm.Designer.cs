@@ -56,193 +56,240 @@
             // 
             // txtCodigo
             // 
-            this.txtCodigo.Location = new System.Drawing.Point(65, 60);
+            this.txtCodigo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtCodigo.Location = new System.Drawing.Point(350, 249);
+            this.txtCodigo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.ReadOnly = true;
-            this.txtCodigo.Size = new System.Drawing.Size(100, 20);
+            this.txtCodigo.Size = new System.Drawing.Size(148, 26);
             this.txtCodigo.TabIndex = 0;
             // 
             // txtDescricao
             // 
-            this.txtDescricao.Location = new System.Drawing.Point(65, 110);
+            this.txtDescricao.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtDescricao.Location = new System.Drawing.Point(350, 326);
+            this.txtDescricao.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtDescricao.Multiline = true;
             this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(186, 43);
+            this.txtDescricao.Size = new System.Drawing.Size(472, 64);
             this.txtDescricao.TabIndex = 1;
             // 
             // txtMarca
             // 
-            this.txtMarca.Location = new System.Drawing.Point(65, 172);
+            this.txtMarca.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtMarca.Location = new System.Drawing.Point(350, 431);
+            this.txtMarca.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtMarca.Name = "txtMarca";
-            this.txtMarca.Size = new System.Drawing.Size(100, 20);
+            this.txtMarca.Size = new System.Drawing.Size(472, 26);
             this.txtMarca.TabIndex = 2;
             // 
             // txtPeso
             // 
-            this.txtPeso.Location = new System.Drawing.Point(65, 228);
+            this.txtPeso.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtPeso.Location = new System.Drawing.Point(350, 508);
+            this.txtPeso.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPeso.Name = "txtPeso";
-            this.txtPeso.Size = new System.Drawing.Size(100, 20);
+            this.txtPeso.Size = new System.Drawing.Size(220, 26);
             this.txtPeso.TabIndex = 3;
             // 
             // txtLargura
             // 
-            this.txtLargura.Location = new System.Drawing.Point(65, 279);
+            this.txtLargura.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtLargura.Location = new System.Drawing.Point(350, 586);
+            this.txtLargura.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtLargura.Name = "txtLargura";
-            this.txtLargura.Size = new System.Drawing.Size(100, 20);
+            this.txtLargura.Size = new System.Drawing.Size(220, 26);
             this.txtLargura.TabIndex = 4;
             // 
             // txtAltura
             // 
-            this.txtAltura.Location = new System.Drawing.Point(65, 327);
+            this.txtAltura.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtAltura.Location = new System.Drawing.Point(602, 508);
+            this.txtAltura.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtAltura.Name = "txtAltura";
-            this.txtAltura.Size = new System.Drawing.Size(100, 20);
+            this.txtAltura.Size = new System.Drawing.Size(220, 26);
             this.txtAltura.TabIndex = 5;
             // 
             // txtProfundidade
             // 
-            this.txtProfundidade.Location = new System.Drawing.Point(65, 369);
+            this.txtProfundidade.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtProfundidade.Location = new System.Drawing.Point(602, 586);
+            this.txtProfundidade.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtProfundidade.Name = "txtProfundidade";
-            this.txtProfundidade.Size = new System.Drawing.Size(100, 20);
+            this.txtProfundidade.Size = new System.Drawing.Size(220, 26);
             this.txtProfundidade.TabIndex = 6;
             // 
             // txtPrecoVenda
             // 
-            this.txtPrecoVenda.Location = new System.Drawing.Point(351, 185);
+            this.txtPrecoVenda.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtPrecoVenda.Location = new System.Drawing.Point(938, 326);
+            this.txtPrecoVenda.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPrecoVenda.Name = "txtPrecoVenda";
-            this.txtPrecoVenda.Size = new System.Drawing.Size(100, 20);
+            this.txtPrecoVenda.Size = new System.Drawing.Size(235, 26);
             this.txtPrecoVenda.TabIndex = 9;
             // 
             // txtQuantidadeEstoque
             // 
-            this.txtQuantidadeEstoque.Location = new System.Drawing.Point(351, 244);
+            this.txtQuantidadeEstoque.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtQuantidadeEstoque.Location = new System.Drawing.Point(938, 431);
+            this.txtQuantidadeEstoque.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtQuantidadeEstoque.Name = "txtQuantidadeEstoque";
-            this.txtQuantidadeEstoque.Size = new System.Drawing.Size(100, 20);
+            this.txtQuantidadeEstoque.Size = new System.Drawing.Size(235, 26);
             this.txtQuantidadeEstoque.TabIndex = 10;
             // 
             // txtCodigoBarras
             // 
-            this.txtCodigoBarras.Location = new System.Drawing.Point(351, 295);
+            this.txtCodigoBarras.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtCodigoBarras.Location = new System.Drawing.Point(938, 508);
+            this.txtCodigoBarras.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCodigoBarras.Name = "txtCodigoBarras";
-            this.txtCodigoBarras.Size = new System.Drawing.Size(100, 20);
+            this.txtCodigoBarras.Size = new System.Drawing.Size(240, 26);
             this.txtCodigoBarras.TabIndex = 11;
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(62, 44);
+            this.label1.Location = new System.Drawing.Point(345, 225);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 13);
+            this.label1.Size = new System.Drawing.Size(59, 20);
             this.label1.TabIndex = 12;
             this.label1.Text = "Código";
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(62, 94);
+            this.label2.Location = new System.Drawing.Point(345, 302);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 13);
+            this.label2.Size = new System.Drawing.Size(80, 20);
             this.label2.TabIndex = 13;
             this.label2.Text = "Descrição";
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(62, 156);
+            this.label3.Location = new System.Drawing.Point(345, 406);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 13);
+            this.label3.Size = new System.Drawing.Size(53, 20);
             this.label3.TabIndex = 14;
             this.label3.Text = "Marca";
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(62, 212);
+            this.label4.Location = new System.Drawing.Point(345, 483);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(31, 13);
+            this.label4.Size = new System.Drawing.Size(45, 20);
             this.label4.TabIndex = 15;
             this.label4.Text = "Peso";
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(62, 266);
+            this.label5.Location = new System.Drawing.Point(345, 562);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(43, 13);
+            this.label5.Size = new System.Drawing.Size(64, 20);
             this.label5.TabIndex = 16;
             this.label5.Text = "Largura";
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(62, 311);
+            this.label6.Location = new System.Drawing.Point(597, 485);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(34, 13);
+            this.label6.Size = new System.Drawing.Size(51, 20);
             this.label6.TabIndex = 17;
             this.label6.Text = "Altura";
             // 
             // label7
             // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(62, 353);
+            this.label7.Location = new System.Drawing.Point(597, 562);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(70, 13);
+            this.label7.Size = new System.Drawing.Size(104, 20);
             this.label7.TabIndex = 18;
             this.label7.Text = "Profundidade";
             // 
             // label10
             // 
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(351, 169);
+            this.label10.Location = new System.Drawing.Point(938, 302);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(84, 13);
+            this.label10.Size = new System.Drawing.Size(123, 20);
             this.label10.TabIndex = 21;
             this.label10.Text = "Preço de Venda";
             // 
             // label11
             // 
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(351, 228);
+            this.label11.Location = new System.Drawing.Point(938, 406);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(121, 13);
+            this.label11.Size = new System.Drawing.Size(182, 20);
             this.label11.TabIndex = 22;
             this.label11.Text = "Quantidade em Estoque";
             // 
             // label12
             // 
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(351, 279);
+            this.label12.Location = new System.Drawing.Point(938, 483);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(88, 13);
+            this.label12.Size = new System.Drawing.Size(132, 20);
             this.label12.TabIndex = 23;
             this.label12.Text = "Código de Barras";
             // 
             // chkSituacao
             // 
+            this.chkSituacao.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.chkSituacao.AutoSize = true;
             this.chkSituacao.Checked = true;
             this.chkSituacao.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkSituacao.Location = new System.Drawing.Point(360, 129);
+            this.chkSituacao.Location = new System.Drawing.Point(574, 249);
+            this.chkSituacao.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.chkSituacao.Name = "chkSituacao";
-            this.chkSituacao.Size = new System.Drawing.Size(68, 17);
+            this.chkSituacao.Size = new System.Drawing.Size(91, 24);
             this.chkSituacao.TabIndex = 24;
             this.chkSituacao.Text = "Situação";
             this.chkSituacao.UseVisualStyleBackColor = true;
             // 
             // chkCondicao
             // 
+            this.chkCondicao.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.chkCondicao.AutoSize = true;
-            this.chkCondicao.Location = new System.Drawing.Point(360, 90);
+            this.chkCondicao.Location = new System.Drawing.Point(717, 249);
+            this.chkCondicao.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.chkCondicao.Name = "chkCondicao";
-            this.chkCondicao.Size = new System.Drawing.Size(71, 17);
+            this.chkCondicao.Size = new System.Drawing.Size(95, 24);
             this.chkCondicao.TabIndex = 25;
             this.chkCondicao.Text = "Condição";
             this.chkCondicao.UseVisualStyleBackColor = true;
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(511, 369);
+            this.btnSalvar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalvar.Location = new System.Drawing.Point(1094, 723);
+            this.btnSalvar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(116, 35);
+            this.btnSalvar.Size = new System.Drawing.Size(228, 97);
             this.btnSalvar.TabIndex = 26;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
@@ -250,9 +297,12 @@
             // 
             // btnSair
             // 
-            this.btnSair.Location = new System.Drawing.Point(647, 369);
+            this.btnSair.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSair.Location = new System.Drawing.Point(1356, 723);
+            this.btnSair.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(116, 35);
+            this.btnSair.Size = new System.Drawing.Size(228, 97);
             this.btnSair.TabIndex = 27;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = true;
@@ -260,9 +310,9 @@
             // 
             // ProdutoAddForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1706, 1006);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.chkCondicao);
@@ -287,7 +337,9 @@
             this.Controls.Add(this.txtMarca);
             this.Controls.Add(this.txtDescricao);
             this.Controls.Add(this.txtCodigo);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "ProdutoAddForm";
             this.Text = "ProdutoForm";
             this.TopMost = true;

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.gridClientes = new System.Windows.Forms.DataGridView();
-            this.btnSair = new System.Windows.Forms.Button();
             this.Cod = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Situacao = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -55,6 +54,7 @@
             this.Excluir = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Cep = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSair = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,24 +92,14 @@
             this.Excluir,
             this.Cep,
             this.Numero});
-            this.gridClientes.Location = new System.Drawing.Point(12, 288);
+            this.gridClientes.Location = new System.Drawing.Point(12, 141);
             this.gridClientes.MultiSelect = false;
             this.gridClientes.Name = "gridClientes";
             this.gridClientes.ReadOnly = true;
             this.gridClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridClientes.Size = new System.Drawing.Size(776, 150);
+            this.gridClientes.Size = new System.Drawing.Size(1067, 380);
             this.gridClientes.TabIndex = 0;
             this.gridClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridClientes_CellContentClick);
-            // 
-            // btnSair
-            // 
-            this.btnSair.Location = new System.Drawing.Point(348, 153);
-            this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(131, 42);
-            this.btnSair.TabIndex = 1;
-            this.btnSair.Text = "Sair";
-            this.btnSair.UseVisualStyleBackColor = true;
-            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // Cod
             // 
@@ -294,11 +284,22 @@
             this.Numero.Name = "Numero";
             this.Numero.ReadOnly = true;
             // 
+            // btnSair
+            // 
+            this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSair.Location = new System.Drawing.Point(880, 12);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(199, 84);
+            this.btnSair.TabIndex = 1;
+            this.btnSair.Text = "Sair";
+            this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
+            // 
             // ClienteListarForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1091, 533);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.gridClientes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

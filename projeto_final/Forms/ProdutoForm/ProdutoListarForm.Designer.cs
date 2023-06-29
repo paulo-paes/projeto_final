@@ -72,12 +72,12 @@
             this.Marca,
             this.Excluir,
             this.Editar});
-            this.gridProdutos.Location = new System.Drawing.Point(12, 251);
+            this.gridProdutos.Location = new System.Drawing.Point(12, 140);
             this.gridProdutos.MultiSelect = false;
             this.gridProdutos.Name = "gridProdutos";
             this.gridProdutos.ReadOnly = true;
             this.gridProdutos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridProdutos.Size = new System.Drawing.Size(776, 187);
+            this.gridProdutos.Size = new System.Drawing.Size(1366, 456);
             this.gridProdutos.TabIndex = 0;
             this.gridProdutos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridProdutos_CellClick);
             this.gridProdutos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridProdutos_CellContentClick_1);
@@ -196,9 +196,10 @@
             // 
             // btnSair
             // 
-            this.btnSair.Location = new System.Drawing.Point(607, 157);
+            this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSair.Location = new System.Drawing.Point(1122, 40);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(114, 33);
+            this.btnSair.Size = new System.Drawing.Size(196, 94);
             this.btnSair.TabIndex = 1;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = true;
@@ -208,7 +209,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1390, 608);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.gridProdutos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

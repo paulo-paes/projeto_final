@@ -94,6 +94,49 @@ namespace projeto_final.dao
             return itens;
         }
 
+        public List<ItemVenda> ObterPorCodVenda(int codVenda)
+        {
+            string query = "SELECT * FROM " + tabela +
+                " WHERE cod_venda = @cod_venda";
+
+            MySqlConnection conexao = ConnectionFactory.Connect();
+            List<ItemVenda> itens = new List<ItemVenda>();
+
+            try
+            {
+                MySqlCommand comando = new MySqlCommand(query, conexao);
+                comando.Parameters.AddWithValue("@cod_venda", codVenda);
+                using (MySqlDataReader reader = comando.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+
+                        itens.Add(new ItemVenda
+                        {
+                            Cod = reader.GetInt32("cod"),
+                            CodVenda = reader.GetInt32("cod_venda"),
+                            CodProduto = reader.GetInt32("cod_produto"),
+                            Quantidade = reader.IsDBNull(3) ? -1 : reader.GetInt32("quantidade"),
+                            Descricao = reader.GetString("descricao"),
+                            ValorUnitario = reader.IsDBNull(5) ? -1 : reader.GetDouble("vlr_unitario"),
+                            SubTotal = reader.IsDBNull(6) ? -1 : reader.GetDouble("sub_total")
+                        });
+                    }
+                    reader.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Não foi possível buscar os itens no banco " + ex.Message);
+            }
+            finally
+            {
+                ConnectionFactory.CloseConnection(conexao);
+            }
+
+            return itens;
+        }
+
         public ItemVenda ObterPorCod(int cod)
         {
 

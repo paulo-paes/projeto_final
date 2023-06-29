@@ -44,6 +44,13 @@ namespace projeto_final.dao
             }
         }
 
+        public void AtualizarEstoque(Venda venda)
+        {
+            foreach(ItemVenda item  in venda.ItensVenda) {
+                Atualizar(item.CodProduto, item.Quantidade);
+            }
+        }
+
         public List<Produto> Listar()
         {
 
@@ -166,6 +173,36 @@ namespace projeto_final.dao
 
             MySqlCommand comando = CriarComandoComParametros(query, produto);
             comando.Parameters.AddWithValue("@cod", produto.Cod);
+            try
+            {
+                comando.ExecuteNonQuery();
+            }
+            catch
+            {
+                throw new Exception("Não foi possível atualizar o registro no banco");
+            }
+            finally
+            {
+                ConnectionFactory.CloseConnection(comando.Connection);
+            }
+        }
+
+        public void Atualizar(int cod, double quantidade)
+        {
+            Produto produtoBanco = ObterPorCod(cod);
+            if (produtoBanco == null)
+            {
+                throw new Exception("Produto não encontrado");
+            }
+            string query = "UPDATE " + tabela + " SET " +
+                "quantidade_estoque = @quantidade_estoque " +
+                "WHERE cod = @cod";
+
+            MySqlConnection conexao = ConnectionFactory.Connect();
+
+            MySqlCommand comando = new MySqlCommand(query, conexao);
+            comando.Parameters.AddWithValue("@cod", cod);
+            comando.Parameters.AddWithValue("@quantidade_estoque", produtoBanco.QuantidadeEstoque - quantidade);
             try
             {
                 comando.ExecuteNonQuery();

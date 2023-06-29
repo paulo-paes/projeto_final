@@ -40,9 +40,11 @@
             // 
             // btnClientes
             // 
-            this.btnClientes.Location = new System.Drawing.Point(334, 168);
+            this.btnClientes.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnClientes.Location = new System.Drawing.Point(653, 168);
+            this.btnClientes.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Size = new System.Drawing.Size(148, 78);
+            this.btnClientes.Size = new System.Drawing.Size(184, 99);
             this.btnClientes.TabIndex = 1;
             this.btnClientes.Text = "Listar Clientes";
             this.btnClientes.UseVisualStyleBackColor = true;
@@ -50,18 +52,23 @@
             // 
             // btnRelatorios
             // 
-            this.btnRelatorios.Location = new System.Drawing.Point(334, 336);
+            this.btnRelatorios.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnRelatorios.Location = new System.Drawing.Point(457, 389);
+            this.btnRelatorios.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnRelatorios.Name = "btnRelatorios";
-            this.btnRelatorios.Size = new System.Drawing.Size(148, 78);
+            this.btnRelatorios.Size = new System.Drawing.Size(380, 98);
             this.btnRelatorios.TabIndex = 2;
             this.btnRelatorios.Text = "Relatórios";
             this.btnRelatorios.UseVisualStyleBackColor = true;
+            this.btnRelatorios.Click += new System.EventHandler(this.btnRelatorios_Click);
             // 
             // btnVendas
             // 
-            this.btnVendas.Location = new System.Drawing.Point(180, 336);
+            this.btnVendas.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnVendas.Location = new System.Drawing.Point(457, 499);
+            this.btnVendas.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnVendas.Name = "btnVendas";
-            this.btnVendas.Size = new System.Drawing.Size(148, 78);
+            this.btnVendas.Size = new System.Drawing.Size(380, 98);
             this.btnVendas.TabIndex = 3;
             this.btnVendas.Text = "Nova Venda";
             this.btnVendas.UseVisualStyleBackColor = true;
@@ -69,9 +76,11 @@
             // 
             // btnProdutos
             // 
-            this.btnProdutos.Location = new System.Drawing.Point(180, 84);
+            this.btnProdutos.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnProdutos.Location = new System.Drawing.Point(457, 57);
+            this.btnProdutos.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnProdutos.Name = "btnProdutos";
-            this.btnProdutos.Size = new System.Drawing.Size(148, 78);
+            this.btnProdutos.Size = new System.Drawing.Size(184, 99);
             this.btnProdutos.TabIndex = 4;
             this.btnProdutos.Text = "Novo Produto";
             this.btnProdutos.UseVisualStyleBackColor = true;
@@ -81,15 +90,18 @@
             // 
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(800, 24);
+            this.menu.Padding = new System.Windows.Forms.Padding(11, 4, 0, 4);
+            this.menu.Size = new System.Drawing.Size(1365, 24);
             this.menu.TabIndex = 5;
             this.menu.Text = "menuStrip1";
             // 
             // btnSair
             // 
-            this.btnSair.Location = new System.Drawing.Point(180, 252);
+            this.btnSair.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSair.Location = new System.Drawing.Point(457, 279);
+            this.btnSair.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(302, 78);
+            this.btnSair.Size = new System.Drawing.Size(380, 98);
             this.btnSair.TabIndex = 6;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = true;
@@ -97,9 +109,11 @@
             // 
             // btnListarPordutos
             // 
-            this.btnListarPordutos.Location = new System.Drawing.Point(334, 84);
+            this.btnListarPordutos.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnListarPordutos.Location = new System.Drawing.Point(653, 57);
+            this.btnListarPordutos.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnListarPordutos.Name = "btnListarPordutos";
-            this.btnListarPordutos.Size = new System.Drawing.Size(148, 78);
+            this.btnListarPordutos.Size = new System.Drawing.Size(184, 99);
             this.btnListarPordutos.TabIndex = 7;
             this.btnListarPordutos.Text = "Listar Produtos";
             this.btnListarPordutos.UseVisualStyleBackColor = true;
@@ -107,9 +121,11 @@
             // 
             // btnNovoCliente
             // 
-            this.btnNovoCliente.Location = new System.Drawing.Point(180, 168);
+            this.btnNovoCliente.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnNovoCliente.Location = new System.Drawing.Point(457, 168);
+            this.btnNovoCliente.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnNovoCliente.Name = "btnNovoCliente";
-            this.btnNovoCliente.Size = new System.Drawing.Size(148, 78);
+            this.btnNovoCliente.Size = new System.Drawing.Size(184, 99);
             this.btnNovoCliente.TabIndex = 8;
             this.btnNovoCliente.Text = "Novo Cliente";
             this.btnNovoCliente.UseVisualStyleBackColor = true;
@@ -117,9 +133,9 @@
             // 
             // frmPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1365, 722);
             this.Controls.Add(this.btnNovoCliente);
             this.Controls.Add(this.btnListarPordutos);
             this.Controls.Add(this.btnSair);
@@ -128,14 +144,14 @@
             this.Controls.Add(this.btnRelatorios);
             this.Controls.Add(this.btnClientes);
             this.Controls.Add(this.menu);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MainMenuStrip = this.menu;
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.MaximizeBox = false;
             this.Name = "frmPrincipal";
-            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Projeto Final";
-            this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.ResumeLayout(false);

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace projeto_final.model
 {
@@ -27,18 +28,29 @@ namespace projeto_final.model
             SubTotal = 0;
         }
 
-        public void AdicionarItemVenda(ItemVenda itemVenda)
+        public void AdicionarItemVenda(Produto p, double quantidade)
         {
-            ItemVenda itemLista = CodProdutoEstaNaVenda(itemVenda.CodProduto);
+            ValidarEstoque(p, quantidade);
+            ItemVenda novoItem = new ItemVenda(p, quantidade);
+            ItemVenda itemLista = CodProdutoEstaNaVenda(novoItem.CodProduto);
             if (itemLista != null)
             {
-                itemLista.Quantidade += itemVenda.Quantidade;
-                itemLista.SubTotal += itemVenda.SubTotal;
+                ValidarEstoque(p, quantidade +  itemLista.Quantidade);
+                itemLista.Quantidade += novoItem.Quantidade;
+                itemLista.SubTotal += novoItem.SubTotal;
             } else
             {
-                this.ItensVenda.Add(itemVenda);
+                this.ItensVenda.Add(novoItem);
             }
             RecalcularValorTotal();
+        }
+
+        private void ValidarEstoque(Produto p, double quantidade)
+        {
+            if (p.QuantidadeEstoque < quantidade)
+            {
+                throw new Exception("Estoque indisponível");
+            }
         }
 
         private ItemVenda CodProdutoEstaNaVenda(int codProduto)
@@ -56,6 +68,12 @@ namespace projeto_final.model
         public void RemoverItemVenda(ItemVenda itemVenda)
         {
             this.ItensVenda.Remove(itemVenda);
+            RecalcularValorTotal();
+        }
+
+        public void RemoverItemVenda(int index)
+        {
+            this.ItensVenda.RemoveAt(index);
             RecalcularValorTotal();
         }
 
