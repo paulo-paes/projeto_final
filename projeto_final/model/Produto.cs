@@ -23,5 +23,10 @@ namespace projeto_final.model
         public DateTime DataCadastro { get; set; }
 
         public Produto() { }
+
+        public override string ToString()
+        {
+            return this.Cod.ToString() + " - " + this.Descricao;
+        }
     }
 }

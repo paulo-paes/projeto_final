@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.gridClientes = new System.Windows.Forms.DataGridView();
+            this.btnSair = new System.Windows.Forms.Button();
             this.Cod = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Situacao = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -41,7 +42,7 @@
             this.Nacionalidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Celular = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Whatsapp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Whatsapp = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Endereco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Complemento = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,7 +55,6 @@
             this.Excluir = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Cep = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnSair = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,6 +100,16 @@
             this.gridClientes.Size = new System.Drawing.Size(776, 150);
             this.gridClientes.TabIndex = 0;
             this.gridClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridClientes_CellContentClick);
+            // 
+            // btnSair
+            // 
+            this.btnSair.Location = new System.Drawing.Point(348, 153);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(131, 42);
+            this.btnSair.TabIndex = 1;
+            this.btnSair.Text = "Sair";
+            this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // Cod
             // 
@@ -195,6 +205,8 @@
             this.Whatsapp.HeaderText = "Whatsapp";
             this.Whatsapp.Name = "Whatsapp";
             this.Whatsapp.ReadOnly = true;
+            this.Whatsapp.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Whatsapp.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // Email
             // 
@@ -282,16 +294,6 @@
             this.Numero.Name = "Numero";
             this.Numero.ReadOnly = true;
             // 
-            // btnSair
-            // 
-            this.btnSair.Location = new System.Drawing.Point(348, 153);
-            this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(131, 42);
-            this.btnSair.TabIndex = 1;
-            this.btnSair.Text = "Sair";
-            this.btnSair.UseVisualStyleBackColor = true;
-            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
-            // 
             // ClienteListarForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -329,7 +331,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Nacionalidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefone;
         private System.Windows.Forms.DataGridViewTextBoxColumn Celular;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Whatsapp;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Whatsapp;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn Endereco;
         private System.Windows.Forms.DataGridViewTextBoxColumn Complemento;

@@ -35,6 +35,9 @@ namespace projeto_final.model
 
         public Cliente() { }
 
-
+        public override string ToString()
+        {
+            return this.Cod.ToString() + " - " + this.Nome;
+        }
     }
 }

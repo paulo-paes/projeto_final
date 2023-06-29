@@ -69,7 +69,7 @@ namespace projeto_final
         {
             try
             {
-                int clienteId = (int)gridClientes.Rows[rowIndex].Cells["Id"].Value;
+                int clienteId = (int)gridClientes.Rows[rowIndex].Cells["Cod"].Value;
                 dao.Excluir(clienteId);
                 MessageBox.Show("Cliente excluído com sucesso");
                 CarregarClientes();
@@ -83,7 +83,6 @@ namespace projeto_final
         private void EditarCliente(int rowIndex)
         {
             int clienteId = (int)gridClientes.Rows[rowIndex].Cells["Cod"].Value;
-            MessageBox.Show(clienteId.ToString());
             ClienteAddForm form = new ClienteAddForm();
             form.SetProdutoContext(clienteId);
 

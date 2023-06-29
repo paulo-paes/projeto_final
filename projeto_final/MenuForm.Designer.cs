@@ -65,6 +65,7 @@
             this.btnVendas.TabIndex = 3;
             this.btnVendas.Text = "Nova Venda";
             this.btnVendas.UseVisualStyleBackColor = true;
+            this.btnVendas.Click += new System.EventHandler(this.btnVendas_Click);
             // 
             // btnProdutos
             // 

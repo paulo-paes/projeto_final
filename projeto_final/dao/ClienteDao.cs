@@ -133,7 +133,6 @@ namespace projeto_final.dao
                 {
                     while (reader.Read())
                     {
-                        MessageBox.Show(reader.GetDateTime("dt_nascimento").ToString());
                         cliente = new Cliente
                         {
                             Cod = reader.GetInt32("cod"),
@@ -199,24 +198,26 @@ namespace projeto_final.dao
                 "celular = @celular, " +
                 "whatsapp = @whatsapp, " +
                 "email = @email ," +
-                "endereco = @endereco ," +
-                "numero = @numero ," +
-                "bairro = @bairro ," +
-                "cidade = @cidade ," +
-                "complemento = @complemento ," +
-                "uf = @uf ," +
-                "observacoes = @observacoes ," +
-                "cep = @cep" +
+                "endereco = @endereco, " +
+                "numero = @numero, " +
+                "bairro = @bairro, " +
+                "cidade = @cidade, " +
+                "complemento = @complemento, " +
+                "uf = @uf, " +
+                "observacoes = @observacoes, " +
+                "cep = @cep " +
                 "WHERE cod = @cod";
 
             MySqlCommand comando = CriarComandoComParametros(query, cliente);
             comando.Parameters.AddWithValue("@cod", cliente.Cod);
+            MessageBox.Show(comando.CommandText);
             try
             {
                 comando.ExecuteNonQuery();
             }
-            catch
+            catch (Exception ex) 
             {
+                MessageBox.Show(ex.Message);
                 throw new Exception("Não foi possível atualizar o registro no banco");
             }
             finally
@@ -264,7 +265,7 @@ namespace projeto_final.dao
             comando.Parameters.AddWithValue("@nacionalidade", cliente.Nacionalidade);
             comando.Parameters.AddWithValue("@telefone", cliente.Telefone);
             comando.Parameters.AddWithValue("@celular", cliente.Celular);
-            comando.Parameters.AddWithValue("@whatsapp", cliente.Whatsapp);
+            comando.Parameters.AddWithValue("@whatsapp", cliente.Whatsapp ? 1 : 0);
             comando.Parameters.AddWithValue("@email", cliente.Email);
             comando.Parameters.AddWithValue("@endereco", cliente.Endereco);
             comando.Parameters.AddWithValue("@numero", cliente.Numero);

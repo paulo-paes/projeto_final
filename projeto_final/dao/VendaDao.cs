@@ -3,18 +3,20 @@ using MySqlX.XDevAPI;
 using projeto_final.model;
 using System;
 using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace projeto_final.dao
 {
     public class VendaDao
     {
         private const string tabela = "vendas";
+        private ItemVendaDao ItemVendaDao = new ItemVendaDao();
         public void Cadastrar(Venda venda)
         {
             string query = "INSERT INTO " + tabela + " (" +
                 "dt_venda," +
                 "cod_cliente," +
-                "cod_usuario," +
+                /*"cod_usuario," +*/
                 "total_itens," +
                 "sub_total," +
                 "desconto," +
@@ -24,15 +26,15 @@ namespace projeto_final.dao
                 "observacoes" +
                 ")" +
                 "VALUES (" +
-                "@dt_venda" +
-                "@cod_cliente" +
-                "@cod_usuario" +
-                "@total_itens" +
-                "@sub_total" +
-                "@desconto" +
-                "@valor_total" +
-                "@forma_pagamento" +
-                "@situacao" +
+                "@dt_venda," +
+                "@cod_cliente," +
+                /*"@cod_usuario," +*/
+                "@total_itens," +
+                "@sub_total," +
+                "@desconto," +
+                "@valor_total," +
+                "@forma_pagamento," +
+                "@situacao," +
                 "@observacoes" +
                 ")";
 
@@ -40,9 +42,17 @@ namespace projeto_final.dao
             try
             {
                 comando.ExecuteNonQuery();
+                comando.CommandText = "SELECT last_insert_id() as id";
+                MySqlDataReader reader = comando.ExecuteReader();
+                while (reader.Read())
+                {
+                    venda.Cod = Convert.ToInt32(reader["id"]);
+                }
+                ItemVendaDao.CadastrarLista(venda);
             }
-            catch
+            catch (Exception ex) 
             {
+                MessageBox.Show(ex.Message);
                 throw new Exception("Não foi possível inserir o registro no banco");
             }
             finally

@@ -43,6 +43,15 @@ namespace projeto_final.dao
             }
         }
 
+        public void CadastrarLista(Venda venda)
+        {
+            foreach(ItemVenda item in venda.ItensVenda)
+            {
+                item.CodVenda = venda.Cod;
+                Cadastrar(item);
+            }
+        }
+
         public List<ItemVenda> Listar()
         {
 

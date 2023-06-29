@@ -71,11 +71,24 @@ namespace projeto_final.Forms.ClienteForm
             Cliente c = ObterCliente();
             try
             {
-                dao.Cadastrar(c);
-            } catch (Exception ex)
+                if (EditMode)
+                {
+                    c.Cod = this.CodigoSelecionado;
+                    dao.Atualizar(c);
+                    MessageBox.Show("Cliente atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    dao.Cadastrar(c);
+
+                    MessageBox.Show("Cliente cadastrado com sucesso!", "Cliente Cadastrado", MessageBoxButtons.OK);
+                }
+                this.Close();
+            }
+            catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Erro");
-            }           
+                MessageBox.Show("Houve um erro", ex.Message, MessageBoxButtons.OK);
+            }
         }
 
         private Cliente ObterCliente()

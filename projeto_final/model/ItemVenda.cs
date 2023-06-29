@@ -17,5 +17,14 @@ namespace projeto_final.model
         public double SubTotal { get; set; }
 
         public ItemVenda() { }
+
+        public ItemVenda(Produto p, double quantidade)
+        {
+            Descricao = p.Descricao;
+            ValorUnitario = p.PrecoVenda;
+            CodProduto = p.Cod;
+            Quantidade = quantidade;
+            SubTotal = Quantidade * ValorUnitario;
+        }
     }
 }
