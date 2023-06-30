@@ -166,7 +166,6 @@ namespace projeto_final.dao
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
                 throw new Exception("Não foi possível buscar o cliente no banco");
             }
             finally
@@ -210,14 +209,13 @@ namespace projeto_final.dao
 
             MySqlCommand comando = CriarComandoComParametros(query, cliente);
             comando.Parameters.AddWithValue("@cod", cliente.Cod);
-            MessageBox.Show(comando.CommandText);
             try
             {
                 comando.ExecuteNonQuery();
             }
             catch (Exception ex) 
             {
-                MessageBox.Show(ex.Message);
+                
                 throw new Exception("Não foi possível atualizar o registro no banco");
             }
             finally

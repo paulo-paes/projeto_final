@@ -54,7 +54,7 @@ namespace projeto_final.Forms.VendaForm
             }
 
             Cliente c = this.clientes.Find(x => x.Cod == Venda.CodCliente);
-            MessageBox.Show((c == null).ToString()) ;
+            
             this.cmbClientes.SelectedItem = c;
 
             this.cmbProdutos.Enabled = false;

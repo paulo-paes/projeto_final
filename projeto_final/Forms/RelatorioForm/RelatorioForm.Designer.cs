@@ -59,8 +59,9 @@
             // 
             // Pesquisar
             // 
-            this.Pesquisar.Location = new System.Drawing.Point(1066, 81);
-            this.Pesquisar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Pesquisar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Pesquisar.Location = new System.Drawing.Point(864, 45);
+            this.Pesquisar.Margin = new System.Windows.Forms.Padding(6);
             this.Pesquisar.Name = "Pesquisar";
             this.Pesquisar.Size = new System.Drawing.Size(181, 44);
             this.Pesquisar.TabIndex = 0;
@@ -70,19 +71,19 @@
             // 
             // dtpInicial
             // 
-            this.dtpInicial.Location = new System.Drawing.Point(17, 87);
-            this.dtpInicial.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dtpInicial.Location = new System.Drawing.Point(16, 51);
+            this.dtpInicial.Margin = new System.Windows.Forms.Padding(6);
             this.dtpInicial.Name = "dtpInicial";
-            this.dtpInicial.Size = new System.Drawing.Size(459, 29);
+            this.dtpInicial.Size = new System.Drawing.Size(328, 29);
             this.dtpInicial.TabIndex = 2;
             this.dtpInicial.Value = new System.DateTime(2023, 6, 29, 0, 0, 0, 0);
             // 
             // dtpFinal
             // 
-            this.dtpFinal.Location = new System.Drawing.Point(523, 87);
-            this.dtpFinal.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dtpFinal.Location = new System.Drawing.Point(373, 51);
+            this.dtpFinal.Margin = new System.Windows.Forms.Padding(6);
             this.dtpFinal.Name = "dtpFinal";
-            this.dtpFinal.Size = new System.Drawing.Size(459, 29);
+            this.dtpFinal.Size = new System.Drawing.Size(330, 29);
             this.dtpFinal.TabIndex = 3;
             this.dtpFinal.Value = new System.DateTime(2023, 6, 29, 0, 0, 0, 0);
             // 
@@ -100,12 +101,12 @@
             this.ValorTotal,
             this.Situacao,
             this.Editar});
-            this.gridVendas.Location = new System.Drawing.Point(15, 198);
-            this.gridVendas.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gridVendas.Location = new System.Drawing.Point(20, 198);
+            this.gridVendas.Margin = new System.Windows.Forms.Padding(6);
             this.gridVendas.MultiSelect = false;
             this.gridVendas.Name = "gridVendas";
             this.gridVendas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridVendas.Size = new System.Drawing.Size(1491, 161);
+            this.gridVendas.Size = new System.Drawing.Size(1335, 161);
             this.gridVendas.TabIndex = 4;
             this.gridVendas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridVendas_CellContentClick);
             // 
@@ -160,8 +161,9 @@
             // 
             // btnSair
             // 
-            this.btnSair.Location = new System.Drawing.Point(1259, 81);
-            this.btnSair.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnSair.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSair.Location = new System.Drawing.Point(1057, 45);
+            this.btnSair.Margin = new System.Windows.Forms.Padding(6);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(165, 44);
             this.btnSair.TabIndex = 5;
@@ -179,10 +181,10 @@
             this.p_cod,
             this.Descricao,
             this.p_quantidade});
-            this.gridProdutosVendidos.Location = new System.Drawing.Point(15, 431);
-            this.gridProdutosVendidos.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gridProdutosVendidos.Location = new System.Drawing.Point(19, 431);
+            this.gridProdutosVendidos.Margin = new System.Windows.Forms.Padding(6);
             this.gridProdutosVendidos.Name = "gridProdutosVendidos";
-            this.gridProdutosVendidos.Size = new System.Drawing.Size(1491, 196);
+            this.gridProdutosVendidos.Size = new System.Drawing.Size(1336, 196);
             this.gridProdutosVendidos.TabIndex = 6;
             // 
             // p_cod
@@ -246,7 +248,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(1211, 401);
+            this.label5.Location = new System.Drawing.Point(953, 401);
             this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(92, 24);
@@ -256,7 +258,7 @@
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(1330, 401);
+            this.lblTotal.Location = new System.Drawing.Point(1072, 401);
             this.lblTotal.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(0, 24);
@@ -265,7 +267,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 57);
+            this.label3.Location = new System.Drawing.Point(11, 21);
             this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(99, 24);
@@ -275,7 +277,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(518, 57);
+            this.label4.Location = new System.Drawing.Point(369, 21);
             this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(93, 24);
@@ -286,7 +288,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1521, 642);
+            this.ClientSize = new System.Drawing.Size(1370, 642);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblTotal);
@@ -303,7 +305,7 @@
             this.Controls.Add(this.gridVendas);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "RelatorioForm";
             this.Text = "RelatorioMenu";
             this.TopMost = true;

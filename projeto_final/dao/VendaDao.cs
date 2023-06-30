@@ -52,7 +52,6 @@ namespace projeto_final.dao
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
                 throw new Exception("Não foi possível inserir o registro no banco");
             }
             finally
